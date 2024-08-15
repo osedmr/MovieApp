@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id ("androidx.navigation.safeargs")
+    id ("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -36,6 +36,7 @@ android {
     }
     buildFeatures{
         viewBinding=true
+        dataBinding=true
     }
 }
 
@@ -51,4 +52,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //View model ve live data
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.lifecycle.livedata.ktx)
 }
