@@ -4,14 +4,16 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.movieapp.data.entity.Filmler
 import com.example.movieapp.data.repository.MovieRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel:ViewModel() {
+@HiltViewModel
+class HomeViewModel @Inject constructor(var movieRepo: MovieRepository):ViewModel() {
 
     val filmlerListesi= MutableLiveData<List<Filmler>>()
-    val movieRepo= MovieRepository()
 
     init {
         filmleriYukle()

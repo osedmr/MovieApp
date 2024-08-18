@@ -13,8 +13,9 @@ import com.example.movieapp.adapters.MovieAdapter
 import com.example.movieapp.data.entity.Filmler
 import com.example.movieapp.databinding.FragmentHomeBinding
 import com.example.movieapp.viewmodel.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
