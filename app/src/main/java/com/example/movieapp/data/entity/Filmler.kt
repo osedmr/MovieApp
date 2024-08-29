@@ -1,10 +1,16 @@
 package com.example.movieapp.data.entity
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import org.jetbrains.annotations.NotNull
 import java.io.Serializable
-
-data class Filmler(var id:Int,
-                   var name:String,
-                   var resim:String,
-                   var price:Int):Serializable {
+@Entity(tableName = "filmler")
+data class Filmler(
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id") @NotNull var id:Int,
+    @ColumnInfo(name = "ad") @NotNull var name:String,
+    @ColumnInfo(name = "resim") @NotNull var resim:String,
+    @ColumnInfo(name = "fiyat") @NotNull var price:Int):Serializable {
 
 }

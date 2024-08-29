@@ -61,6 +61,13 @@ dependencies {
 
     implementation ("com.google.dagger:hilt-android:2.48")
     kapt ("com.google.dagger:hilt-compiler:2.48")
+
+    //room database
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
+    // To use Kotlin annotation processing tool (kapt)
+    kapt(libs.androidx.room.room.compiler)
+    implementation("androidx.room:room-ktx:2.6.1")
 }
 kapt {
     correctErrorTypes= true
